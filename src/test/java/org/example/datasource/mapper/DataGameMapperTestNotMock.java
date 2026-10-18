@@ -1,30 +1,5 @@
 package org.example.datasource.mapper;
 
-// =====================================================================
-// ВЕРСИЯ ТЕСТА: NOT MOCK (чистый JUnit, без Mockito)
-// Тестируем: org.example.datasource.mapper.DataGameMapper
-//
-// Зависимостей нет: создаёшь new DataGameMapper() и гоняешь входы/выходы.
-//
-// ПЛАН ТЕСТОВ:
-//
-// --- toDomain(DataGame) ---
-//  - все 8 полей переехали в Game (uuid, матрица, computerMark, status,
-//    currentTurn, winner, firstPlayer, secondPlayer)
-//  - null-поля (computerMark, winner, secondPlayer) остаются null и не падают
-//    (computerMark - Integer, проверь именно null, а не 0)
-//
-// --- toDataSource(Game) ---
-//  - то же самое в обратную сторону
-//
-// --- Круговой тест ---
-//  - Game -> toDataSource -> toDomain: результат совпадает с исходным по полям
-//
-// Матрицу сравнивай assertArrayEquals (для int[][] - Assertions.assertArrayEquals
-// сравнивает вложенные массивы по содержимому; assertEquals сравнил бы ссылки).
-// =====================================================================
-
-import org.example.datasource.mapper.DataGameMapper;
 import org.example.datasource.model.DataGame;
 import org.example.datasource.model.DataGameField;
 import org.example.domain.model.Game;
